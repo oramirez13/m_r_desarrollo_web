@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Solicite una cotización de M_R para su proyecto web."
+    />
+    <title>Cotización | M_R Desarrollo Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#contenido-principal"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="encabezado">
+      <div class="contenedor">
+        <nav class="navegacion" aria-label="Menú principal">
+          <a href="index.html" class="marca">
+            <img src="img/dominio.png" alt="Logo de M_R" class="logo-navbar" />
+            M_R Desarrollo Web
+          </a>
+          <button
+            class="boton-hamburguesa"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+          >
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+          </button>
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cotizacion.html" class="active">Cotización</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal">
+      <section class="seccion">
+        <div class="contenedor">
+          <h1>Solicitar cotización</h1>
+          <p>
+            Complete los datos básicos del proyecto para preparar una propuesta
+            inicial.
+          </p>
+
+          <form id="formCotizacion" class="formulario" novalidate>
+            <div class="row">
+              <div class="col-md-6 grupo-formulario">
+                <label for="nombre"
+                  >Nombre completo <span aria-hidden="true">*</span></label
+                >
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  autocomplete="name"
+                  placeholder="Su nombre"
+                />
+              </div>
+              <div class="col-md-6 grupo-formulario">
+                <label for="correo"
+                  >Correo electrónico <span aria-hidden="true">*</span></label
+                >
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  required
+                  autocomplete="email"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+            </div>
+
+            <div class="grupo-formulario" id="telefonico">
+              <label for="telefono"
+                >Número telefónico <span aria-hidden="true">*</span></label
+              >
+              <div class="campo-telefono">
+                <span class="prefijo-telefono" aria-hidden="true">+506</span>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  required
+                  inputmode="numeric"
+                  pattern="[0-9]{8}"
+                  maxlength="8"
+                  placeholder="8888 8888"
+                  autocomplete="tel-national"
+                />
+              </div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="tipo"
+                >Tipo de proyecto <span aria-hidden="true">*</span></label
+              >
+              <select id="tipo" name="tipo" required>
+                <option value="">Seleccione un tipo...</option>
+                <option value="Landing page">Landing page</option>
+                <option value="Web corporativa">Web corporativa</option>
+                <option value="Catálogo digital">Catálogo digital</option>
+              </select>
+              <div id="nombreServicioFormulario" class="texto-ayuda"></div>
+            </div>
+
+            <div class="grupo-formulario">
+              <label for="mensaje"
+                >Descripción del proyecto
+                <span aria-hidden="true">*</span></label
+              >
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                required
+                maxlength="500"
+                placeholder="Describa brevemente su proyecto"
+              ></textarea>
+              <small class="texto-ayuda"
+                >Caracteres: <span id="contador">0</span>/500</small
+              >
+            </div>
+
+            <button type="submit" class="boton boton-principal">
+              Enviar solicitud
+            </button>
+
+            <div
+              id="mensajeConfirmacion"
+              class="d-none"
+              role="status"
+              style="
+                margin-top: 16px;
+                padding: 12px;
+                background-color: var(--color-primario);
+                color: white;
+                border-radius: var(--radio-borde);
+              "
+            >
+              Solicitud guardada correctamente.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="contenedor text-center">
+        <p>M_R Desarrollo Web. Todos los derechos reservados © 2026.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

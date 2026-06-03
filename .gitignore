@@ -1,0 +1,76 @@
+# ============================================================
+# .gitignore - M_R Desarrollo Web
+# Archivos y carpetas que Git debe ignorar
+# ============================================================
+
+# --- Archivos del sistema operativo ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Editores de código ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# --- Archivos temporales y de caché ---
+*.log
+*.tmp
+*.temp
+.cache/
+*.cache
+
+# --- Dependencias (si usas npm en el futuro) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Archivos de entorno y configuración local ---
+.env
+.env.local
+.env.*.local
+config.local.js
+*.local
+
+# --- Archivos de compilación (si los hubiera) ---
+dist/
+build/
+*.min.js
+*.min.css
+
+# --- Archivos de backup ---
+*.bak
+*.backup
+*.old
+
+# --- Imágenes temporales o de prueba ---
+*.psd
+*.ai
+*.sketch
+
+# --- Documentos temporales ---
+*.docx~
+*.xlsx~
+*.pptx~
+
+# --- Carpetas de pruebas ---
+test/
+tests/
+__tests__/
+coverage/
+
+# --- Archivos de documentación temporal ---
+TODO.md
+CHANGELOG.md.bak

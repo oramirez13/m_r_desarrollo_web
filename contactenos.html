@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulario de contacto de M_R Desarrollo Web."
+    />
+    <title>Contáctenos | M_R Desarrollo Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#contenido-principal"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="encabezado">
+      <div class="contenedor">
+        <nav class="navegacion" aria-label="Menú principal">
+          <a href="index.html" class="marca">
+            <img src="img/dominio.png" alt="Logo de M_R" class="logo-navbar" />
+            M_R Desarrollo Web
+          </a>
+          <button
+            class="boton-hamburguesa"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+          >
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+          </button>
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cotizacion.html">Cotización</a></li>
+            <li><a href="contactenos.html" class="active">Contáctenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal">
+      <section class="seccion">
+        <div class="contenedor">
+          <h1>Contáctenos</h1>
+          <p>
+            Puede comunicarse para consultas, seguimiento de proyectos o
+            solicitud de información.
+          </p>
+
+          <div class="row">
+            <aside class="col-md-4">
+              <div class="lista-datos">
+                <h3>Información</h3>
+                <ul>
+                  <li><strong>Correo:</strong> contacto@mrweb.local</li>
+                  <li>
+                    <strong>Horario:</strong> lunes a viernes, 8:00 a.m. a 5:00
+                    p.m.
+                  </li>
+                  <li>
+                    <strong>Servicio:</strong> desarrollo de sitios web para
+                    negocios.
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
+            <div class="col-md-8">
+              <form id="formContactenos" class="formulario" novalidate>
+                <div class="grupo-formulario">
+                  <label for="nombre"
+                    >Nombre <span aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    autocomplete="name"
+                    placeholder="Su nombre completo"
+                  />
+                </div>
+
+                <div class="grupo-formulario">
+                  <label for="correo"
+                    >Correo <span aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    required
+                    autocomplete="email"
+                    placeholder="correo@ejemplo.com"
+                  />
+                </div>
+
+                <div class="grupo-formulario" id="telefonico">
+                  <label for="telefono"
+                    >Número telefónico <span aria-hidden="true">*</span></label
+                  >
+                  <div class="campo-telefono">
+                    <span class="prefijo-telefono" aria-hidden="true"
+                      >+506</span
+                    >
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      required
+                      inputmode="numeric"
+                      pattern="[0-9]{8}"
+                      maxlength="8"
+                      placeholder="8888 8888"
+                      autocomplete="tel-national"
+                    />
+                  </div>
+                </div>
+
+                <div class="grupo-formulario">
+                  <label for="mensaje"
+                    >Mensaje <span aria-hidden="true">*</span></label
+                  >
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    required
+                    maxlength="500"
+                    placeholder="Describa brevemente su consulta"
+                  ></textarea>
+                  <small class="texto-ayuda"
+                    >Caracteres: <span id="contador">0</span>/500</small
+                  >
+                </div>
+
+                <button type="submit" class="boton boton-principal">
+                  Enviar mensaje
+                </button>
+
+                <div
+                  id="mensajeConfirmacion"
+                  class="d-none"
+                  role="status"
+                  style="
+                    margin-top: 16px;
+                    padding: 12px;
+                    background-color: var(--color-primario);
+                    color: white;
+                    border-radius: var(--radio-borde);
+                  "
+                >
+                  Mensaje guardado correctamente.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="contenedor text-center">
+        <p>M_R Desarrollo Web. Todos los derechos reservados © 2026.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

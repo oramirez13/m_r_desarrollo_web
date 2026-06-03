@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="M_R Desarrollo Web: landing pages, sitios corporativos y catálogos digitales."
+    />
+    <title>M_R Sitios Web | Diseño y desarrollo web para negocios</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#contenido-principal"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="encabezado">
+      <div class="contenedor">
+        <nav class="navegacion" aria-label="Menú principal">
+          <a href="index.html" class="marca">
+            <img src="img/dominio.png" alt="Logo de M_R" class="logo-navbar" />
+            M_R Desarrollo Web
+          </a>
+          <button
+            class="boton-hamburguesa"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+          >
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+          </button>
+          <ul class="menu">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="cotizacion.html">Cotización</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="contenedor hero-contenido">
+          <p class="etiqueta">M_R Desarrollo Web</p>
+          <h1>Diseño y desarrollo web para negocios</h1>
+          <p>
+            Landing pages, webs corporativas y catálogos digitales. Creamos
+            sitios claros, responsivos y fáciles de administrar para empresas
+            que necesitan mostrar sus servicios, productos y datos de contacto
+            en internet.
+          </p>
+          <div class="acciones">
+            <a href="cotizacion.html" class="boton boton-principal"
+              >Solicitar cotización</a
+            >
+            <a href="#servicios" class="boton boton-secundario"
+              >Ver servicios</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section id="servicios" class="seccion">
+        <div class="contenedor">
+          <h2>Servicios</h2>
+          <p>
+            Haz clic en una tarjeta o presiona Enter para iniciar una cotización
+            con ese servicio seleccionado.
+          </p>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div
+                class="tarjeta-servicio tarjeta"
+                tabindex="0"
+                role="button"
+                aria-label="Cotizar Landing page"
+                data-servicio="Landing page"
+              >
+                <h3>Landing pages</h3>
+                <p>
+                  Páginas enfocadas en presentar una oferta, captar clientes y
+                  mostrar llamados a la acción claros.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="tarjeta-servicio tarjeta"
+                tabindex="0"
+                role="button"
+                aria-label="Cotizar Web corporativa"
+                data-servicio="Web corporativa"
+              >
+                <h3>Webs corporativas</h3>
+                <p>
+                  Sitios para negocios que necesitan información institucional,
+                  servicios, contacto y presencia profesional.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="tarjeta-servicio tarjeta"
+                tabindex="0"
+                role="button"
+                aria-label="Cotizar Catálogo digital"
+                data-servicio="Catálogo digital"
+              >
+                <h3>Catálogos digitales</h3>
+                <p>
+                  Catálogos organizados para mostrar productos, características,
+                  categorías y datos de consulta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACERCA DE -->
+      <section id="acerca" class="seccion">
+        <div class="contenedor">
+          <h2>Acerca de M_R</h2>
+          <div class="row">
+            <div class="col-md-8">
+              <p>
+                M_R es un servicio de desarrollo web orientado a negocios que
+                necesitan una presencia digital clara, ordenada y fácil de
+                entender.
+              </p>
+              <p>
+                El trabajo se enfoca en estructuras simples, diseño responsivo,
+                contenido directo y páginas preparadas para presentar servicios,
+                productos o información corporativa.
+              </p>
+            </div>
+            <aside class="col-md-4">
+              <div class="lista-datos">
+                <h3>Contacto directo</h3>
+                <p>
+                  Para consultas, cotizaciones o información adicional, use la
+                  página Contáctenos.
+                </p>
+                <a href="contactenos.html" class="boton boton-principal"
+                  >Ir a Contáctenos</a
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="contenedor text-center">
+        <p>M_R Desarrollo Web. Todos los derechos reservados © 2026.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
