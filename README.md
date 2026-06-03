@@ -2,7 +2,7 @@
 
 Sitio web corporativo y de servicios para **M_R Desarrollo Web**. El proyecto está diseñado para ofrecer landing pages, sitios corporativos y catálogos digitales para negocios que necesitan una presencia digital clara, ordenada y fácil de administrar.
 
-## 🛠️ Tecnología Actual del Proyecto (Stack)
+## Tecnología Actual del Proyecto (Stack)
 
 El proyecto es un sitio web estático moderno, ligero y **sin dependencias externas** (ni Bootstrap, ni librerías de terceros).
 
@@ -18,7 +18,7 @@ El proyecto es un sitio web estático moderno, ligero y **sin dependencias exter
   - **Blob API y URL.createObjectURL:** generan y descargan archivos `.txt` con los datos de los formularios.
 - **Sin dependencias externas:** No se usa Bootstrap, jQuery ni CDNs. Todo el CSS y JS es propio.
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 proyecto_mr/
