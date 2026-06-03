@@ -12,11 +12,12 @@ El proyecto es un sitio web estático moderno, ligero y **sin dependencias exter
   - **Flexbox:** Diseño del encabezado, menú hamburguesa, logo y formularios.
   - **Grid system propio:** Clases `.row`, `.col-md-*` implementadas sin Bootstrap.
   - **Media Queries:** Diseño 100% responsivo (móvil, tablet, escritorio).
-  - **Funciones avanzadas:** `env()` para Safe Area Insets, `prefers-reduced-motion` y `prefers-color-scheme`.
+  - **Funciones avanzadas:** `env()` para Safe Area Insets, `@supports` para detección de características.
 - **JavaScript (Vanilla JS):** Programación nativa sin frameworks.
   - **LocalStorage API:** para recordar la selección de servicios entre páginas.
   - **Blob API y URL.createObjectURL:** generan y descargan archivos `.txt` con los datos de los formularios.
 - **Sin dependencias externas:** No se usa Bootstrap, jQuery ni CDNs. Todo el CSS y JS es propio.
+- **Accesibilidad:** Soporte para `prefers-reduced-motion`, navegación por teclado, atributos ARIA y skip-to-content link.
 
 ## Estructura del Proyecto
 
@@ -30,11 +31,13 @@ proyecto_mr/
 │   └── script.js               # Lógica de formularios, menú y selección de servicios
 │
 ├── img/
-│   ├── dominio.png             # Logotipo del sitio (globo terráqueo)
-│   └── pexels_01.jpg           # Imagen de fondo para el efecto parallax global
+│   ├── dominio.png             # Logotipo del sitio (globo terráqueo, usado también como favicon)
+│   ├── pexels_01.jpg           # Imagen de fondo para el efecto parallax global
+│   └── seo-y-web.png           # Imagen adicional para servicios
 │
 ├── index.html                  # Página única consolidada (Hero, Servicios, Acerca de)
-── cotizacion.html             # Formulario de solicitud de cotización
+├── cotizacion.html             # Formulario de solicitud de cotización
 ├── contactenos.html            # Formulario de contacto directo
+├── 404.html                    # Página personalizada de error 404
 └── README.md                   # Documentación del proyecto
 ```

@@ -93,7 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
             txt += "Mensaje: " + textoSeguro(obtenerElemento("mensaje").value) + "\n";
             descargarArchivo("contactenos_mr.txt", txt);
             var msg = obtenerElemento("mensajeConfirmacion");
-            if (msg) msg.classList.remove("d-none");
+            if (msg) {
+                msg.classList.remove("d-none");
+                setTimeout(function(){ msg.classList.add("d-none"); }, 4000);
+            }
             formC.reset();
             if (contador) contador.textContent = "0";
         });
@@ -121,7 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
             txt += "Descripción: " + textoSeguro(obtenerElemento("mensaje").value) + "\n";
             descargarArchivo("cotizacion_mr.txt", txt);
             var msg = obtenerElemento("mensajeConfirmacion");
-            if (msg) msg.classList.remove("d-none");
+            if (msg) {
+                msg.classList.remove("d-none");
+                setTimeout(function(){ msg.classList.add("d-none"); }, 4000);
+            }
             formQ.reset();
             borrarServicio();
             if (contador) contador.textContent = "0";

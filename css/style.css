@@ -141,7 +141,9 @@ button:hover { background-color: var(--color-terciario); }
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(5px);
+}
+@supports (backdrop-filter: blur(5px)) {
+    .encabezado { backdrop-filter: blur(5px); }
 }
 
 .navegacion {
@@ -250,6 +252,8 @@ button:hover { background-color: var(--color-terciario); }
     background-color: rgba(28, 35, 51, 0.6); /* Fondo con transparencia */
     padding: 56px 0;
     border-top: 1px solid rgba(61, 79, 102, 0.3);
+}
+.seccion:last-of-type {
     border-bottom: 1px solid rgba(61, 79, 102, 0.3);
 }
 .seccion h1, .seccion h2, .seccion h3 { color: var(--color-claro); }
