@@ -1,6 +1,6 @@
 # M_R Desarrollo Web
 
-Sitio web corporativo y de servicios para **M_R Desarrollo Web**. El proyecto está diseñado para ofrecer landing pages, sitios corporativos y catálogos digitales para negocios que necesitan una presencia digital clara, ordenada y fácil de administrar.
+Sitio web corporativo y de servicios para **M_R Web Design**. El proyecto está diseñado para ofrecer landing pages, sitios corporativos y catálogos digitales para negocios que necesitan una presencia digital clara, ordenada y fácil de administrar.
 
 ## Tecnología Actual del Proyecto (Stack)
 
