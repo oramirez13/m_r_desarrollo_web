@@ -16,28 +16,37 @@ El proyecto es un sitio web estático moderno, ligero y **sin dependencias exter
 - **JavaScript (Vanilla JS):** Programación nativa sin frameworks.
   - **LocalStorage API:** para recordar la selección de servicios entre páginas.
   - **Blob API y URL.createObjectURL:** generan y descargan archivos `.txt` con los datos de los formularios.
+  - **Fetch API:** inyecta el encabezado y el pie desde la carpeta `partials/` para no repetirlos en cada página.
+  - **URLSearchParams e history.replaceState:** leen el servicio desde la URL y la limpian después de usarla.
 - **Sin dependencias externas:** No se usa Bootstrap, jQuery ni CDNs. Todo el CSS y JS es propio.
 - **Accesibilidad:** Soporte para `prefers-reduced-motion`, navegación por teclado, atributos ARIA y skip-to-content link.
+
+> **Importante:** los parciales se cargan con `fetch()`, por lo que el sitio debe servirse por HTTP
+> (ej. `python3 -m http.server`) o publicarse en GitHub Pages. No funciona abriendo los archivos
+> directamente con `file://`.
 
 ## Estructura del Proyecto
 
 ```text
-proyecto_mr/
-│
-── css/
-│   └── style.css               # Hoja de estilos principal (CSS3 + Variables)
+m_r_desarrollo_web/
+├── css/
+│   └── style.css           # Hoja de estilos principal (CSS3 + Variables)
 │
 ├── js/
-│   └── script.js               # Lógica de formularios, menú y selección de servicios
+│   ├── components.js       # Inyección del encabezado/pie y menú hamburguesa
+│   └── script.js           # Lógica de formularios y selección de servicios
 │
 ├── img/
-│   ├── dominio.png             # Logotipo del sitio (globo terráqueo, usado también como favicon)
-│   ├── pexels_01.jpg           # Imagen de fondo para el efecto parallax global
-│   └── seo-y-web.png           # Imagen adicional para servicios
+│   ├── dominio.png         # Logotipo del sitio (globo terráqueo, usado también como favicon)
+│   └── pexels_01.jpg       # Imagen de fondo para el efecto parallax global
 │
-├── index.html                  # Página única consolidada (Hero, Servicios, Acerca de)
-├── cotizacion.html             # Formulario de solicitud de cotización
-├── contactenos.html            # Formulario de contacto directo
-├── 404.html                    # Página personalizada de error 404
-└── README.md                   # Documentación del proyecto
+├── partials/
+│   ├── header.html         # Encabezado y menú compartidos por todas las páginas
+│   └── footer.html         # Pie de página compartido por todas las páginas
+│
+├── index.html              # Página de inicio (Hero, Servicios, Acerca de)
+├── cotizacion.html         # Formulario de solicitud de cotización
+├── contactenos.html        # Formulario de contacto directo
+├── 404.html                # Página personalizada de error 404
+└── README.md               # Documentación del proyecto
 ```

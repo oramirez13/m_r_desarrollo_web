@@ -1,6 +1,6 @@
 /* ============================================================
    script.js - M_R Web Design
-   Version: 3.0
+   Version: 3.1
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function obtenerTelefono() {
         var c = obtenerElemento("telefono");
         return c ? "+506 " + limpiarTexto(c.value) : "";
+    }
+    function valorCampo(id) {
+        var elemento = obtenerElemento(id);
+        return elemento ? elemento.value : "";
     }
 
     function descargarArchivo(nombre, contenido) {
@@ -29,26 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
     function leerServicio() {
         var s = "";
         try { s = localStorage.getItem("servicioTemporalMR"); } catch(e){}
-        if (!s) { var p = new URLSearchParams(window.location.search); s = p.get("servicio"); }
+        if (!s) {
+            var p = new URLSearchParams(window.location.search);
+            s = p.get("servicio");
+            // Si venimos de la URL, limpiamos el parametro para que
+            // un refresh no vuelva a preseleccionar el servicio
+            if (s) { history.replaceState(null, "", window.location.pathname); }
+        }
         return textoSeguro(s);
     }
     function borrarServicio() { try { localStorage.removeItem("servicioTemporalMR"); } catch(e){} }
-
-    // MENÚ HAMBURGUESA
-    var btnHamb = document.querySelector(".boton-hamburguesa");
-    var menu = document.querySelector(".menu");
-    if (btnHamb && menu) {
-        btnHamb.addEventListener("click", function () {
-            var abierto = menu.classList.toggle("menu-activo");
-            btnHamb.setAttribute("aria-expanded", abierto);
-        });
-        menu.querySelectorAll("a").forEach(function (enlace) {
-            enlace.addEventListener("click", function () {
-                menu.classList.remove("menu-activo");
-                btnHamb.setAttribute("aria-expanded", "false");
-            });
-        });
-    }
 
     // CONTADOR
     var campoMsg = obtenerElemento("mensaje");
@@ -87,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!formC.checkValidity()) { formC.reportValidity(); return; }
             var txt = "Formulario de contáctenos - M_R\n--------------------------------\n";
             txt += "Fecha: " + obtenerFecha() + "\n";
-            txt += "Nombre: " + textoSeguro(obtenerElemento("nombre").value) + "\n";
-            txt += "Correo: " + limpiarTexto(obtenerElemento("correo").value).toLowerCase() + "\n";
+            txt += "Nombre: " + textoSeguro(valorCampo("nombre")) + "\n";
+            txt += "Correo: " + limpiarTexto(valorCampo("correo")).toLowerCase() + "\n";
             txt += "Teléfono: " + obtenerTelefono() + "\n";
-            txt += "Mensaje: " + textoSeguro(obtenerElemento("mensaje").value) + "\n";
+            txt += "Mensaje: " + textoSeguro(valorCampo("mensaje")) + "\n";
             descargarArchivo("contactenos_mr.txt", txt);
             var msg = obtenerElemento("mensajeConfirmacion");
             if (msg) {
@@ -117,11 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!formQ.checkValidity()) { formQ.reportValidity(); return; }
             var txt = "Formulario de cotización - M_R\n------------------------------\n";
             txt += "Fecha: " + obtenerFecha() + "\n";
-            txt += "Nombre: " + textoSeguro(obtenerElemento("nombre").value) + "\n";
-            txt += "Correo: " + limpiarTexto(obtenerElemento("correo").value).toLowerCase() + "\n";
+            txt += "Nombre: " + textoSeguro(valorCampo("nombre")) + "\n";
+            txt += "Correo: " + limpiarTexto(valorCampo("correo")).toLowerCase() + "\n";
             txt += "Teléfono: " + obtenerTelefono() + "\n";
-            txt += "Tipo: " + textoSeguro(obtenerElemento("tipo").value) + "\n";
-            txt += "Descripción: " + textoSeguro(obtenerElemento("mensaje").value) + "\n";
+            txt += "Tipo: " + textoSeguro(valorCampo("tipo")) + "\n";
+            txt += "Descripción: " + textoSeguro(valorCampo("mensaje")) + "\n";
             descargarArchivo("cotizacion_mr.txt", txt);
             var msg = obtenerElemento("mensajeConfirmacion");
             if (msg) {

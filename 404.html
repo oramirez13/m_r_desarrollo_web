@@ -4,59 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Página no encontrada - M_R Web Design" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="M_R Web Design" />
+    <meta property="og:title" content="404 - Página no encontrada | M_R Web Design" />
+    <meta
+      property="og:description"
+      content="Página no encontrada - M_R Web Design"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/oramirez13/m_r_desarrollo_web/main/img/dominio.png"
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/oramirez13/m_r_desarrollo_web"
+    />
+    <meta name="twitter:card" content="summary" />
     <title>404 - Página no encontrada | M_R Web Design</title>
     <link rel="icon" href="img/dominio.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a class="sr-only" href="#contenido-principal"
-      >Saltar al contenido principal</a
-    >
-
-    <header class="encabezado">
-      <div class="contenedor">
-        <nav class="navegacion" aria-label="Menú principal">
-          <a href="index.html" class="marca">
-            <img src="img/dominio.png" alt="Logo de M_R" class="logo-navbar" />
-            M_R Web Design
-          </a>
-          <button
-            class="boton-hamburguesa"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-          >
-            <span class="linea-hamburguesa"></span>
-            <span class="linea-hamburguesa"></span>
-            <span class="linea-hamburguesa"></span>
-          </button>
-          <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cotizacion.html">Cotización</a></li>
-            <li><a href="contactenos.html">Contáctenos</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- El encabezado se inyecta desde partials/header.html -->
+    <div data-include="partials/header.html"></div>
 
     <main id="contenido-principal">
-      <section
-        class="seccion"
-        style="
-          min-height: 60vh;
-          display: flex;
-          align-items: center;
-          text-align: center;
-        "
-      >
+      <section class="seccion error-seccion">
         <div class="contenedor">
-          <p class="etiqueta" style="font-size: 4rem; letter-spacing: 8px">
-            404
-          </p>
+          <p class="etiqueta error-codigo">404</p>
           <h1>Página no encontrada</h1>
-          <p style="max-width: 560px; margin: 0 auto 32px">
+          <p class="error-mensaje">
             La página que buscas no existe o fue movida.
           </p>
-          <div class="acciones" style="justify-content: center">
+          <div class="acciones">
             <a href="index.html" class="boton boton-principal"
               >Volver al inicio</a
             >
@@ -65,11 +45,10 @@
       </section>
     </main>
 
-    <footer class="pie">
-      <div class="contenedor text-center">
-        <p>M_R Web Design. Todos los derechos reservados &copy; 2026.</p>
-      </div>
-    </footer>
+    <!-- El pie de pagina se inyecta desde partials/footer.html -->
+    <div data-include="partials/footer.html"></div>
+
+    <script src="js/components.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
